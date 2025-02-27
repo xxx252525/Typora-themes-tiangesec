@@ -1,5 +1,79 @@
 :root {
   --color-background: #dfdfdf;
+  --use-dynamic-effect: 1; /* 开启交互动画*/
+  --h1-hover-effect: 1; /* H1标题的交互效果 */
+  --h2-after-effect: 1; /* H2标题后边的效果 */
+  --h3-6-hover-effect: 1; /* H3至H6标题的交互效果 */
+  --img-hover-effect: 1;;/*图片交互*/
+  --p-hover-effect: 1;/*段落动画*/
+  --p-hover-bg-color: rgba(123, 181, 147, calc(0.1 * var(--p-hover-effect) * var(--use-dynamic-effect)));
+  /* 引用块交互效果 */
+  --blockquote-hover-effect: 1;
+  /* 提示框交互效果 */
+  --alert-hover-effect: 1;
+  /*粗体文本交互效果 */
+  --strong-hover-effect: 1;
+  /*高亮文本交互效果 */
+  --mark-hover-effect: 1;
+
+
+
+  /* 颜色 */
+	/* 提示颜色 */
+  --alert-tip-border-color: #1F883D;
+  --alert-tip-bg-color: #e8f4eb;
+  --alert-tip-hover-border-color: #1F883D;
+  --alert-tip-thead-bg-color: #3b9457;
+  --alert-tip-thead-text-color: #fafbfa;
+
+  --alert-caution-border-color: #CF222E;
+  --alert-caution-bg-color: #f5ecec;
+  --alert-caution-hover-border-color: #CF222E;
+	--alert-caution-hover-bg-color: #cf222d0a;
+	--alter-caution-selection-bg-color: #cf222d17;
+	--alert-caution-text-color: #CF222E;
+	--alert-caution-thead-bg-color: #d83c46;
+	--alert-caution-thead-text-color: #fafbfa;
+	--alert-caution-td-hover-bg-color: #f5ecec;
+	--alert-caution-list-item-marker-color: #CF222E;
+  /* 警告颜色 */
+	--alert-warning-border-color: #9A6700;
+	--alert-warning-bg-color: #f4f1e9;
+	--alert-warning-hover-border-color: #9A6700;
+	--alert-warning-hover-bg-color: #9a67000a;
+	--alert-warning-selection-bg-color: #9a670017;
+	--alert-warning-text-color: #9A6700;
+	--alert-warning-thead-bg-color: #b7831c;
+	--alert-warning-thead-text-color: #fafbfa;
+	--alert-warning-list-item-marker-color: #9A6700;
+  /* 重要颜色 */
+	--alert-important-border-color: #8250DF;
+	--alert-important-bg-color: #eae6f2;
+	--alert-important-hover-border-color: #8250DF;
+	--alert-important-hover-bg-color: #8250df0a;
+	--alert-important-selection-bg-color: #8250df17;
+	--alert-important-text-color: #8250DF;
+	--alert-important-thead-bg-color: #8250DF;
+	--alert-important-thead-text-color: #fafbfa;
+	--alert-important-list-item-marker-color: #8250DF;
+
+	--alert-note-border-color: #0969DA;
+	--alert-note-bg-color: #e5ebf1;
+	--alert-note-hover-border-color: #0969DA;
+	--alert-note-hover-bg-color: #0969da0a;
+	--alert-note-selection-bg-color: #0969da17;
+	--alert-note-text-color: #0969DA;
+	--alert-note-thead-bg-color: #0969DA;
+	--alert-note-thead-text-color: #fafbfa;
+	--alert-note-list-item-marker-color: #0969DA;
+
+	--alert-code-bg-color: #67676716;
+	--alert-code-3circle-1: #fc625d;
+	--alert-code-3circle-2: #fdbc40;
+	--alert-code-3circle-3: #34c759;
+	--alert-td-bg-color: #fafafa;
+
+
 }
 
 /* body::before {
@@ -37,36 +111,48 @@
 /* 软件内部Markdown样式 */
 #write {
 	max-width: 900px;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	color: black;
 	padding: 10px;
 	line-height: 1.6;
-    color: #000;
-    letter-spacing: 1px;
+	color: #000;
+	letter-spacing: 1px;
 	word-spacing: 0px;
-    word-break: break-word;
-    word-wrap: break-word;
-    text-align: left;
-    font-family: 'Source Han Serif CN', sans-serif, "MiSans Regular", sans-serif, Microsoft YaHei, Open Sans, serif, Cascadia Code, Fira Code, JetBrains Momo, MesloLGS NF, MesloLGM Nerd Font;
+	word-break: break-word;
+	word-wrap: break-word;
+	text-align: left;
+	font-family: 'Source Han Serif CN', sans-serif, "MiSans Regular", sans-serif, Microsoft YaHei, Open Sans, serif, Cascadia Code, Fira Code, JetBrains Momo, MesloLGS NF, MesloLGM Nerd Font;
 }
 
 /*段落*/
 #write + p, 
 #write blockquote p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
   margin: 0;
   line-height: 1.5rem;
   color: #000;
+  transition: all 0.25s ease;
 }
+
+
 #write div[mdtype=toc] {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
+
+p:not(:has(img)):hover {
+    background-color: var(--p-hover-bg-color);
+}
+
+p.md-toc-content:hover {
+    padding-left: 20px;
+}
+
 
 /* 一级标题 */
 #write h1 {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   display: table;
   font-weight: bold;
   margin: 20px 0;
@@ -77,27 +163,38 @@
   background-size: 200% 100%;
   background-position: 0% 0%;
   transition: all ease-in-out 0.1s;
+  position: relative; /* 为了能够使用绝对定位来放置伪元素 */
+  overflow: hidden; /* 隐藏溢出的内容，使动画效果更加平滑 */
+  transition: transform 0.4s ease; /* 鼠标悬停时，H1 的缩放动画 */
   font-family: "MiSans", sans-serif;
+
 }
 
 #write h1:hover {
   background-position: -100% -100%;
   transition: all ease-in-out 0.1s;
+  transform: scale(calc(1 + 0.2 * var(--h1-hover-effect) * var(--use-dynamic-effect))); /* 鼠标悬停时，H1 本身的缩放动画 */
 }
 
 /* 一级标题内容 */
 #write h1 .content {
 }
 
+#write h1:hover:before {
+    transform: scaleX(calc(var(--h1-hover-effect) * var(--use-dynamic-effect))); /* 鼠标悬停时，伪元素的水平缩放动画 */
+}
+
 /* 一级标题修饰 请参考有实例的主题 */
 #write h1:after {
 }
 
+
 /* 二级标题 */
 #write h2 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   border-bottom: 2px solid #F37553;
   font-family: "MiSans", sans-serif;
+  position: relative;
 }
 
 /* 二级标题内容 */
@@ -126,26 +223,32 @@
 
 /* 三级标题 */
 #write h3 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-family: "MiSans", sans-serif;
 }
 
 /* 三级标题内容 */
 #write h3 span {
-	border-radius: 5px;
-	background: #1DA4FF;
-	color: #ffffff;
-	padding: 3px 8px;
-	margin-right: 4px;
-	background: linear-gradient(to right, #3fb0cc, #3fcc98);
-	transition: all ease-in-out 0.1s;
+  border-radius: 5px;
+  background: #1DA4FF;
+  color: #ffffff;
+  padding: 3px 8px;
+  margin-right: 4px;
+  background: linear-gradient(to right, #3fb0cc, #3fcc98);
+  transition: all 0.2s ease-in-out; /* 增加过渡时间并调整为更加平滑的 ease-in-out */
+}
+
+/* 三级标题悬停效果 */
+#write h3:hover {
+  transform: scale(calc(1 + 0.01 * var(--h3-6-hover-effect) * var(--use-dynamic-effect)));
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 使用 cubic-bezier 曲线使放大效果更平滑 */
 }
 
 
 /* 四级标题 */
 #write h4 {
   margin: 20px 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: left;
   color: #3fccca;
   font-family: "MiSans", sans-serif;
@@ -155,7 +258,7 @@
 /* 五级标题 */
 #write h5 {
   margin: 23px 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: left;
   color: #ff6b6b;
   font-family: "MiSans", sans-serif;
@@ -163,7 +266,7 @@
 
 
 #write h6 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: "MiSans", sans-serif;
 }
 
@@ -171,7 +274,8 @@
 /* 有序列表 */
 ::marker {
     font-weight: bold;
-    color: #fb879e
+    color: #fb879e;
+	transition: transform 0.3s;
 }
 
 li.md-list-item {
@@ -201,7 +305,6 @@ li.md-list-item {
     font-weight: 500;
 }
 
-
 /* 鼠标悬停时的样式 */
 #write ol li:hover {
   background-color: transparent; /* 鼠标悬停时背景颜色保持透明 */
@@ -217,7 +320,6 @@ li.md-list-item {
   background-color: #fb879e; /* 鼠标悬停时在文本内容下方添加虚线 */
   opacity: 0.5; /* 降低虚线的透明度 */
 }
-
 
 /* 无序列表整体样式 */
 #write ul {
@@ -242,7 +344,6 @@ li.md-list-item {
 	color: #fb879e;
 	font-weight: 500;
 }
-
 /* 鼠标悬停时的样式 */
 #write ul li:hover {
   background-color: transparent; /* 鼠标悬停时背景颜色保持透明 */
@@ -258,8 +359,6 @@ li.md-list-item {
   background-color: #fb879e; /* 鼠标悬停时在文本内容下方添加虚线 */
   opacity: 0.5; /* 降低虚线的透明度 */
 }
-
-
 
 
 /* 任务列表样式 */
@@ -310,19 +409,261 @@ li.md-list-item {
 }
 
 
-
 /* 引用 */
-#write blockquote {
-    display: block;
-    font-size: 1.2em;
-    overflow: auto;
-    border-left: 3px solid #1ebbff;
-    padding: 5px 10px 5px 10px;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    background: #E8E8E8;
+blockquote {
+	display: block;
+	font-size: 1.2em;
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #2f845e;
+    background-color: #e8f4eb;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
 }
 
+blockquote p {
+    margin: 0.1rem 0;
+}
+
+blockquote:hover {
+    box-shadow: calc(0px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--blockquote-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--blockquote-hover-effect) * var(--use-dynamic-effect));
+}
+
+blockquote table thead,
+blockquote .md-table-fig .md-table thead {
+    background-color: #3b9457;
+    color: #3b3b3b4e;
+}
+
+blockquote td {
+    background-color: #fafafa;
+}
+
+
+/* 提示框 */
+.md-alert.md-alert-tip {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-tip-border-color);
+    background-color: var(--alert-tip-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-tip:hover {
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-tip table thead,
+.md-alert.md-alert-tip .md-table-fig .md-table thead {
+    background-color: var(--alert-tip-thead-bg-color);
+    color: var(--alert-tip-thead-text-color);
+}
+
+.md-alert.md-alert-caution {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-caution-border-color);
+    background-color: var(--alert-caution-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-caution:hover {
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-caution p:hover {
+    background-color: var(--alert-caution-hover-bg-color);
+}
+
+.md-alert.md-alert-caution ::selection {
+    background-color: var(--alter-caution-selection-bg-color);
+}
+
+.md-alert.md-alert-caution strong,
+.md-alert.md-alert-caution em,
+.md-alert.md-alert-caution code,
+.md-alert.md-alert-caution a {
+    color: var(--alert-caution-text-color);
+}
+
+.md-alert.md-alert-caution table thead,
+.md-alert.md-alert-caution .md-table-fig .md-table thead {
+    background-color: var(--alert-caution-thead-bg-color);
+    color: var(--alert-caution-thead-text-color);
+}
+
+.md-alert.md-alert-caution td:hover {
+    background-color: var(--alert-caution-td-hover-bg-color);
+}
+
+.md-alert.md-alert-caution ul .md-list-item::marker,
+.md-alert.md-alert-caution ul ul .md-list-item::marker,
+.md-alert.md-alert-caution ul ul .md-list-item::marker,
+.md-alert.md-alert-caution ol .md-list-item:hover::marker {
+    color: var(--alert-caution-list-item-marker-color);
+}
+
+.md-alert.md-alert-warning {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-warning-border-color);
+    background-color: var(--alert-warning-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-warning:hover {
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-warning p:hover {
+    background-color: var(--alert-warning-hover-bg-color);
+}
+
+.md-alert.md-alert-warning ::selection {
+    background-color: var(--alert-warning-selection-bg-color);
+}
+
+.md-alert.md-alert-warning strong,
+.md-alert.md-alert-warning em,
+.md-alert.md-alert-warning code,
+.md-alert.md-alert-warning a {
+    color: var(--alert-warning-text-color);
+}
+
+.md-alert.md-alert-warning table thead,
+.md-alert.md-alert-warning .md-table-fig .md-table thead {
+    background-color: var(--alert-warning-thead-bg-color);
+    color: var(--alert-warning-thead-text-color);
+}
+
+.md-alert.md-alert-warning ul .md-list-item::marker,
+.md-alert.md-alert-warning ul ul .md-list-item::marker,
+.md-alert.md-alert-warning ul ul .md-list-item::marker,
+.md-alert.md-alert-warning ol .md-list-item:hover::marker {
+    color: var(--alert-warning-list-item-marker-color);
+}
+
+.md-alert.md-alert-important {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-important-border-color);
+    background-color: var(--alert-important-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-important:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid var(--alert-important-hover-border-color);
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-important p:hover {
+    background-color: var(--alert-important-hover-bg-color);
+}
+
+.md-alert.md-alert-important ::selection {
+    background-color: var(--alert-important-selection-bg-color);
+}
+
+.md-alert.md-alert-important strong,
+.md-alert.md-alert-important em,
+.md-alert.md-alert-important code,
+.md-alert.md-alert-important a {
+    color: var(--alert-important-text-color);
+}
+
+.md-alert.md-alert-important table thead,
+.md-alert.md-alert-important .md-table-fig .md-table thead {
+    background-color: var(--alert-important-thead-bg-color);
+    color: var(--alert-important-thead-text-color);
+}
+
+.md-alert.md-alert-important ul .md-list-item::marker,
+.md-alert.md-alert-important ul ul .md-list-item::marker,
+.md-alert.md-alert-important ul ul .md-list-item::marker,
+.md-alert.md-alert-important ol .md-list-item:hover::marker {
+    color: var(--alert-important-list-item-marker-color);
+}
+
+.md-alert.md-alert-note {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-note-border-color);
+    background-color: var(--alert-note-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-note:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid var(--alert-note-hover-border-color);
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-note p:hover {
+    background-color: var(--alert-note-hover-bg-color);
+}  
+
+.md-alert.md-alert-note ::selection {
+    background-color: var(--alert-note-selection-bg-color);
+}
+
+.md-alert.md-alert-note strong,
+.md-alert.md-alert-note em,
+.md-alert.md-alert-note code,
+.md-alert.md-alert-note a {
+    color: var(--alert-note-text-color);
+}
+
+.md-alert.md-alert-note table thead,
+.md-alert.md-alert-note .md-table-fig .md-table thead {
+    background-color: var(--alert-note-thead-bg-color);
+    color: var(--alert-note-thead-text-color);
+}
+
+.md-alert.md-alert-note ul .md-list-item::marker,
+.md-alert.md-alert-note ul ul .md-list-item::marker,
+.md-alert.md-alert-note ul ul .md-list-item::marker,
+.md-alert.md-alert-note ol .md-list-item:hover::marker {
+    color: var(--alert-note-list-item-marker-color);
+}
+
+.md-alert p {
+    margin: 0.1rem 0;
+}
+
+blockquote code,
+.md-alert.md-alert-tip code,
+.md-alert.md-alert-caution code,
+.md-alert.md-alert-warning code,
+.md-alert.md-alert-important code,
+.md-alert.md-alert-note code {
+    background-color: var(--alert-code-bg-color);
+}
+
+.md-alert.md-alert-tip .md-fences::before,
+.md-alert.md-alert-caution .md-fences::before,
+.md-alert.md-alert-warning .md-fences::before,
+.md-alert.md-alert-important .md-fences::before,
+.md-alert.md-alert-note .md-fences::before {
+    background: var(--alert-code-3circle-1);
+    box-shadow: 20px 0 var(--alert-code-3circle-2), 40px 0 var(--alert-code-3circle-3);
+}
+
+blockquote td,
+.md-alert.md-alert-tip td,
+.md-alert.md-alert-caution td,
+.md-alert.md-alert-warning td,
+.md-alert.md-alert-important td,
+.md-alert.md-alert-note td {
+    background-color: var(--alert-td-bg-color);
+}
+
+.md-alert-text-container {
+    font-size: 20px;
+}
 
 
 /* 链接 */
@@ -330,7 +671,7 @@ li.md-list-item {
   color: #000;
   border-bottom: 1px solid #FE5CB1;
   text-decoration: none;
-  transform: all linear 0.1s;
+  transform: all linear 0.3s;
 }
 
 #write a:hover {
@@ -356,14 +697,22 @@ li.md-list-item {
 #write sup a::before {
   content: none;
 }
+
+
 /* 加粗 */
 #write strong {
   color: #f1627e;
   font-weight: bold;
+	transition: font-size 0.3s ease, padding 0.3s ease;
+	display: inline-block;
+	margin: 0 2px;
 }
 
-#write strong::after {
+strong:hover {
+    font-size: calc(1.2rem + 0.05rem * var(--strong-hover-effect) * var(--use-dynamic-effect));
+    padding: calc(0px + 3px * var(--strong-hover-effect) * var(--use-dynamic-effect));
 }
+
 
 /* 斜体 */
 #write em {
@@ -396,12 +745,19 @@ li.md-list-item {
 
 /* 图片*/
 #write img {
-	border-radius: 5px;
+	border-radius: 8px;
 	display: block;
 	margin: 5px auto;
 	object-fit: contain;
 	border-left: none !important;
 	border-right: none !important;
+	transition: transform 0.15s ease, border-radius 0.15s ease;
+}
+
+img:hover {
+	border-radius: 8px;
+    transform: scale(calc(1 + 0.01 * var(--img-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(10px - 10px * var(--img-hover-effect) * var(--use-dynamic-effect));
 }
 
 /* 图片描述文字 */
@@ -411,19 +767,160 @@ li.md-list-item {
   color: #595959;
 }
 
+
+/*表格*/
+#write table {
+	border: 1px solid #ccc;
+  display: table;
+  text-align: left;
+	border-radius: 6px;
+	border-collapse: separate;
+	overflow: hidden;
+}
+
+#write tbody {
+  border: 1px solid #ccc;
+}
+
+#write table tr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  background-color: white;
+}
+
+#write table tr:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+#write table tr th,
+#write table tr td {
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-align: left;
+	transition: all 0.3s ease;
+}
+
+#write table tr th {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+
+/* 脚注文字 */
+#write .footnote-word {
+  font-weight: normal;
+  color: #595959;
+}
+
+/* 脚注上标 */
+#write .footnote-ref {
+  font-weight: normal;
+  color: #595959;
+}
+
+/*脚注链接样式*/
+#write .footnote-item em {
+  font-size: 14px;
+  color: #595959;
+  display: block;
+  background: none;
+}
+
+/* 行间公式*/
+#write .block-equation svg {
+}
+
+/* 行内公式
+*/
+#write .inline-equation svg {
+}
+
+/* 复选框 */
+
+#write input[type=checkbox] {
+    width: 0;
+}
+
+.task-list-item input::before {
+    content: "";
+    display: inline-block;
+    width: 1.0125rem;
+    height: 1.0125rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid var(--marker-color);
+    border-radius: 1.2rem;
+    background-color: #fdfdfd;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+    margin-top: -.6rem;
+}
+
+.task-list-item input:checked::before {
+    content: '✓';
+    font-weight: bold;
+    -webkit-text-stroke: 1px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-size: 0.75rem;
+    line-height: 0.8rem;
+}
+
+blockquote .task-list-item input::before {
+    margin-top: .2rem;
+}
+
+
+/*
+ * 滚动条
+ */
+
+#outline-content::-webkit-scrollbar {
+    width: .5rem;
+}
+
+#file-library::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(179, 179, 179, 0.425);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+
+
 /* 行内代码 */
 #write p code {
   color: #14dd53;
-  font-family: MiSans, Microsoft YaHei, Open Sans, serif, Cascadia Code, Fira Code, JetBrains Momo, MesloLGS NF, MesloLGM Nerd Font;
+  font-family: Fira Code, JetBrains Momo, MesloLGS NF, MesloLGM Nerd Font;
   letter-spacing: 0.3px;
-  background: #F4F4F4;
+  background: rgba(221, 235, 213, 0.5);
   border-radius: 4px;
   letter-spacing: 0.2px;
   padding: 0.1em 0.2em;
+	font-size: 1.25rem;
 }
 #write li code {
   color: #595959;
 }
+
+code:hover {
+    background-color: var(--code-hover-bg-color);
+    font-weight: calc(550 + 150 * var(--code-hover-effect) * var(--use-dynamic-effect));
+    padding: 3px 3px calc(1px + 2px * var(--code-hover-effect) * var(--use-dynamic-effect));
+}
+
+
 
 /* 代码块 */
 .md-fences::before {
@@ -440,6 +937,8 @@ li.md-list-item {
   background-position: 6px 10px;
 }
 
+
+
 /* CodeMirror 相关内容 */
 .CodeMirror-wrap .CodeMirror-scroll {
   overflow-x: auto;
@@ -451,6 +950,7 @@ li.md-list-item {
   font-family: Cascadia Code, Fira Code, JetBrains Momo, Consolas, MesloLGS NF, MesloLGM Nerd Font;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+	font-size: 1.1rem;
   
 }
 .cm-s-inner .cm-keyword {
@@ -546,125 +1046,6 @@ li.md-list-item {
 .cm-s-inner .CodeMirror-line > span > span::selection {
   background-color: rgba(167, 178, 189, 0.2);
 }
-
-/*表格*/
-#write table {
-  display: table;
-  text-align: left;
-}
-#write tbody {
-  border: 0;
-}
-#write table tr {
-  border: 0;
-  border-top: 1px solid #ccc;
-  background-color: white;
-}
-#write table tr:nth-child(2n) {
-  background-color: #F8F8F8;
-}
-#write table tr th,
-#write table tr td {
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  text-align: left;
-}
-#write table tr th {
-  font-weight: bold;
-  background-color: #f0f0f0;
-}
-
-/* 脚注文字 */
-#write .footnote-word {
-  font-weight: normal;
-  color: #595959;
-}
-
-/* 脚注上标 */
-#write .footnote-ref {
-  font-weight: normal;
-  color: #595959;
-}
-
-/*脚注链接样式*/
-#write .footnote-item em {
-  font-size: 14px;
-  color: #595959;
-  display: block;
-  background: none;
-}
-
-/* 行间公式*/
-#write .block-equation svg {
-}
-
-/* 行内公式
-*/
-#write .inline-equation svg {
-}
-
-/* 复选框 */
-
-#write input[type=checkbox] {
-    width: 0;
-}
-
-.task-list-item input::before {
-    content: "";
-    display: inline-block;
-    width: 1.0125rem;
-    height: 1.0125rem;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid var(--marker-color);
-    border-radius: 1.2rem;
-    background-color: #fdfdfd;
-    margin-left: -0.1rem;
-    margin-right: 0.1rem;
-    margin-top: -.6rem;
-}
-
-.task-list-item input:checked::before {
-    content: '✓';
-    font-weight: bold;
-    -webkit-text-stroke: 1px var(--primary-color);
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-    font-size: 0.75rem;
-    line-height: 0.8rem;
-}
-
-blockquote .task-list-item input::before {
-    margin-top: .2rem;
-}
-
-
-/*
- * 滚动条
- */
-
-#outline-content::-webkit-scrollbar {
-    width: .5rem;
-}
-
-#file-library::-webkit-scrollbar {
-    width: .5rem;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgba(179, 179, 179, 0.425);
-}
-
-::-webkit-scrollbar {
-    width: 1rem;
-}
-
 
 
 

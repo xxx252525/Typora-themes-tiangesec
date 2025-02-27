@@ -2,82 +2,97 @@
 @import "dark/code.css";
 
 :root {
-    --of-theme-color: #91ffc8;
-    /* --of-theme-color-dark: #2a3139; */
-    --of-theme-color-dark: #2a3932;
-    
-    --of-darkest-color: #101312;
-    --of-darker-color: #151a17;
-    --of-dark-color: #212b27;
-    --of-dark-color2: #1c211f;
-    --of-strong: white;
-    --of-strong-code: #ff795e;
-    --of-font-size: 16.5px; /*字体大小*/
-    --of-selection: #4a89dc;
-    --of-selection-text: white;
-    --of-link-color: #91ffc8;
+	--of-theme-color: #91ffc8;
+	/* --of-theme-color-dark: #2a3139; */
+	--of-theme-color-dark: #2a3932;
+	
+	--of-darkest-color: #101312;
+	--of-darker-color: #151a17;
+	--of-dark-color: #212b27;
+	--of-dark-color2: #1c211f;
+	--of-strong: white;
+	--of-strong-code: #ff795e;
+	--of-font-size: 16.5px; /*字体大小*/
+	--of-selection: #4a89dc;
+	--of-selection-text: white;
+	--of-link-color: #91ffc8;
 
-    --bg-color: var(--of-darker-color);
-    --bg-color-megamenu: #15171a;
-    /* 侧边栏颜色 */
-    --side-bar-bg-color: var(--of-darkest-color);
-    --text-color: white;
-    /* 这才是文字颜色 */
-    --text-color-main: white;
-    /* 选中文字的颜色 */
-    --select-text-bg-color: var(--of-selection);
-    /* 被激活的目录背景 */
-    --item-hover-bg-color:  var(--of-dark-color);
-    --control-text-color: #b7b7b7;
-    --control-text-hover-color: #fff;
-    --window-border: 1px solid #333;
-    /* 被激活的文件背景 */
-    --active-file-bg-color: var(--of-dark-color);
-    --active-file-border-color: var(--of-theme-color);
-    --primary-color: var(--of-theme-color);
-    --active-file-text-color: #fff;
-    --item-hover-text-color: #fff;
-    /* 编辑HTML文件 */
-    --rawblock-edit-panel-bd: var(--of-dark-color);
-    --search-select-bg-color: #3c3c3c;
-    
-    --code-bg-color:  var(--of-dark-color);
-    /* --code-bg-color: #31302e; */
-    --footer-bg-color: var(--side-bar-bg-color);
-    --table-bg-darker-color:   var(--of-dark-color2);
-    --table-bg-color:   var(--of-dark-color);
-    --table-bg-color2:   var(--of-darkest-color);
-    --table-thead-color: var(--of-darkest-color);
-    --md-code-color: var(--of-strong-code);
-    --table-edit-color: var(--of-darkest-color);
-    --task-list-border-color: #ffffff;
-    --task-list-black-border-color: #000000;
-    /* --task-list-bg-color: rgb(176, 21, 21); */
-    --task-list-checked-color: #00ffa6;
-    /* 设置导航栏选中的背景颜色 */
-    --nav-group-item-color: var(--of-theme-color-dark);
-    --select-background: var(--of-theme-color-dark);
-    --other-main-color: var(--of-theme-color);
-    --hover-color: var(--of-dark-color2);
-    /* 引用的背景颜色 */
-    --blockquote-color: var(--of-dark-color);
-    /* 源代码被激活的颜色 */
-    --codemirror-color: var(--of-dark-color);
-    /* 右键菜单按下 */
-    --menu-item-container-btn-hover: var(--of-dark-color2);
-    /* 右键菜单按钮边框 */
-    --menu-item-container-btn: var(--of-theme-color-dark);
-    /* 右键菜单和字数统计 */
-    --context-menu-color: var(--of-darkest-color);
-    /* tooltip颜色（右键菜单按按钮时显示提示的颜色） */
-    --tooltip-color: var(--of-darkest-color);
-    /* tooltip文字颜色*/
-    --tooltip-text-color: white;
-    /* 滚动条颜色 */
-    --scrollbar-color: var(--of-theme-color-dark);
-    /* 源代码模式光标 */
-    --code-cursor-color: var(--of-theme-color);
-    /* 返回按钮 */
+	--bg-color: var(--of-darker-color);
+	--bg-color-megamenu: #15171a;
+	/* 侧边栏颜色 */
+	--side-bar-bg-color: var(--of-darkest-color);
+	--text-color: white;
+	/* 这才是文字颜色 */
+	--text-color-main: white;
+	/* 选中文字的颜色 */
+	--select-text-bg-color: var(--of-selection);
+	/* 被激活的目录背景 */
+	--item-hover-bg-color:  var(--of-dark-color);
+	--control-text-color: #b7b7b7;
+	--control-text-hover-color: #fff;
+	--window-border: 1px solid #333;
+	/* 被激活的文件背景 */
+	--active-file-bg-color: var(--of-dark-color);
+	--active-file-border-color: var(--of-theme-color);
+	--primary-color: var(--of-theme-color);
+	--active-file-text-color: #fff;
+	--item-hover-text-color: #fff;
+	/* 编辑HTML文件 */
+	--rawblock-edit-panel-bd: var(--of-dark-color);
+	--search-select-bg-color: #3c3c3c;
+	
+	--code-bg-color:  var(--of-dark-color);
+	/* --code-bg-color: #31302e; */
+	--footer-bg-color: var(--side-bar-bg-color);
+	--table-bg-darker-color:   var(--of-dark-color2);
+	--table-bg-color:   var(--of-dark-color);
+	--table-bg-color2:   var(--of-darkest-color);
+	--table-thead-color: var(--of-darkest-color);
+	--md-code-color: var(--of-strong-code);
+	--table-edit-color: var(--of-darkest-color);
+	--task-list-border-color: #ffffff;
+	--task-list-black-border-color: #000000;
+	/* --task-list-bg-color: rgb(176, 21, 21); */
+	--task-list-checked-color: #00ffa6;
+	/* 设置导航栏选中的背景颜色 */
+	--nav-group-item-color: var(--of-theme-color-dark);
+	--select-background: var(--of-theme-color-dark);
+	--other-main-color: var(--of-theme-color);
+	--hover-color: var(--of-dark-color2);
+	/* 引用的背景颜色 */
+	--blockquote-color: var(--of-dark-color);
+	/* 源代码被激活的颜色 */
+	--codemirror-color: var(--of-dark-color);
+	/* 右键菜单按下 */
+	--menu-item-container-btn-hover: var(--of-dark-color2);
+	/* 右键菜单按钮边框 */
+	--menu-item-container-btn: var(--of-theme-color-dark);
+	/* 右键菜单和字数统计 */
+	--context-menu-color: var(--of-darkest-color);
+	/* tooltip颜色（右键菜单按按钮时显示提示的颜色） */
+	--tooltip-color: var(--of-darkest-color);
+	/* tooltip文字颜色*/
+	--tooltip-text-color: white;
+	/* 滚动条颜色 */
+	--scrollbar-color: var(--of-theme-color-dark);
+	/* 源代码模式光标 */
+	--code-cursor-color: var(--of-theme-color);
+	/* 返回按钮 */
+  --use-dynamic-effect: 1; /* 开启交互动画*/
+  --h1-hover-effect: 1; /* H1标题的交互效果 */
+  --h2-after-effect: 1; /* H2标题后边的效果 */
+  --h3-6-hover-effect: 1; /* H3至H6标题的交互效果 */
+  --img-hover-effect: 1;;/*图片交互*/
+  --p-hover-effect: 1;/*段落动画*/
+
+  /* 引用块交互效果 */
+  --blockquote-hover-effect: 1;
+  /* 提示框交互效果 */
+  --alert-hover-effect: 1;
+  /*粗体文本交互效果 */
+  --strong-hover-effect: 1;
+  /*高亮文本交互效果 */
+  --mark-hover-effect: 1;
 
 
 }
@@ -103,7 +118,7 @@
 
 /* 一级标题 */
 #write h1 {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   display: table;
   font-weight: bold;
   margin: 20px 0;
@@ -113,6 +128,10 @@
   background: linear-gradient(to right, #29C1A8, #F743C8,#F94187);
   background-size: 200% 100%;
   background-position: 0% 0%;
+	transition: all ease-in-out 0.1s;
+	position: relative; /* 为了能够使用绝对定位来放置伪元素 */
+	overflow: hidden; /* 隐藏溢出的内容，使动画效果更加平滑 */
+	transition: transform 0.4s ease; /* 鼠标悬停时，H1 的缩放动画 */
   transition: all ease-in-out 0.1s;
   font-family: "MiSans", sans-serif;
 }
@@ -120,11 +139,17 @@
 #write h1:hover {
   background-position: -100% -100%;
   transition: all ease-in-out 0.1s;
+  transform: scale(calc(1 + 0.2 * var(--h1-hover-effect) * var(--use-dynamic-effect))); /* 鼠标悬停时，H1 本身的缩放动画 */
 }
 
 /* 一级标题内容 */
 #write h1 .content {
 }
+
+#write h1:hover:before {
+    transform: scaleX(calc(var(--h1-hover-effect) * var(--use-dynamic-effect))); /* 鼠标悬停时，伪元素的水平缩放动画 */
+}
+
 
 /* 一级标题修饰 请参考有实例的主题 */
 #write h1:after {
@@ -132,7 +157,7 @@
 
 /* 二级标题 */
 #write h2 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   border-bottom: 2px solid #145BEA;
   font-family: "MiSans", sans-serif;
   
@@ -154,7 +179,7 @@
 
 /* 三级标题 */
 #write h3 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-family: "MiSans", sans-serif;
 }
 
@@ -166,14 +191,20 @@
 	padding: 3px 8px;
 	margin-right: 4px;
 	background: linear-gradient(to right, #3fb0cc, #3fcc98);
-	transition: all ease-in-out 0.1s;
+  transition: all 0.2s ease-in-out; /* 增加过渡时间并调整为更加平滑的 ease-in-out */
+}
+
+/* 三级标题悬停效果 */
+#write h3:hover {
+  transform: scale(calc(1 + 0.01 * var(--h3-6-hover-effect) * var(--use-dynamic-effect)));
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 使用 cubic-bezier 曲线使放大效果更平滑 */
 }
 
 
 /* 四级标题 */
 #write h4 {
   margin: 20px 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: left;
   color: #3fccca;
   font-family: "MiSans", sans-serif;
@@ -183,7 +214,7 @@
 /* 五级标题 */
 #write h5 {
   margin: 23px 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: left;
   color: #ff6b6b;
   font-family: "MiSans", sans-serif;
@@ -191,7 +222,7 @@
 
 
 #write h6 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
   font-family: "MiSans", sans-serif;
 }
@@ -343,15 +374,259 @@ li.md-list-item {
 
 
 /* 引用 */
-#write blockquote {
-    display: block;
-    font-size: 1.2em;
-    overflow: auto;
-    border-left: 3px solid #1ebbff;
-    padding: 5px 10px 5px 10px;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    background: #4E5D6C;
+blockquote {
+	display: block;
+	font-size: 1.2em;
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #63ab24;
+    background-color: #036029;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+blockquote p {
+    margin: 0.1rem 0;
+}
+
+blockquote:hover {
+    box-shadow: calc(0px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--blockquote-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--blockquote-hover-effect) * var(--use-dynamic-effect));
+}
+
+blockquote table thead,
+blockquote .md-table-fig .md-table thead {
+    background-color: #3b9457;
+    color: #3b3b3b4e;
+}
+
+blockquote td {
+    background-color: #fafafa;
+}
+
+
+/* 提示框 */
+.md-alert.md-alert-tip {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-tip-border-color);
+    background-color: var(--alert-tip-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-tip:hover {
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-tip table thead,
+.md-alert.md-alert-tip .md-table-fig .md-table thead {
+    background-color: var(--alert-tip-thead-bg-color);
+    color: var(--alert-tip-thead-text-color);
+}
+
+.md-alert.md-alert-caution {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-caution-border-color);
+    background-color: var(--alert-caution-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-caution:hover {
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-caution p:hover {
+    background-color: var(--alert-caution-hover-bg-color);
+}
+
+.md-alert.md-alert-caution ::selection {
+    background-color: var(--alter-caution-selection-bg-color);
+}
+
+.md-alert.md-alert-caution strong,
+.md-alert.md-alert-caution em,
+.md-alert.md-alert-caution code,
+.md-alert.md-alert-caution a {
+    color: var(--alert-caution-text-color);
+}
+
+.md-alert.md-alert-caution table thead,
+.md-alert.md-alert-caution .md-table-fig .md-table thead {
+    background-color: var(--alert-caution-thead-bg-color);
+    color: var(--alert-caution-thead-text-color);
+}
+
+.md-alert.md-alert-caution td:hover {
+    background-color: var(--alert-caution-td-hover-bg-color);
+}
+
+.md-alert.md-alert-caution ul .md-list-item::marker,
+.md-alert.md-alert-caution ul ul .md-list-item::marker,
+.md-alert.md-alert-caution ul ul .md-list-item::marker,
+.md-alert.md-alert-caution ol .md-list-item:hover::marker {
+    color: var(--alert-caution-list-item-marker-color);
+}
+
+.md-alert.md-alert-warning {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-warning-border-color);
+    background-color: var(--alert-warning-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-warning:hover {
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-warning p:hover {
+    background-color: var(--alert-warning-hover-bg-color);
+}
+
+.md-alert.md-alert-warning ::selection {
+    background-color: var(--alert-warning-selection-bg-color);
+}
+
+.md-alert.md-alert-warning strong,
+.md-alert.md-alert-warning em,
+.md-alert.md-alert-warning code,
+.md-alert.md-alert-warning a {
+    color: var(--alert-warning-text-color);
+}
+
+.md-alert.md-alert-warning table thead,
+.md-alert.md-alert-warning .md-table-fig .md-table thead {
+    background-color: var(--alert-warning-thead-bg-color);
+    color: var(--alert-warning-thead-text-color);
+}
+
+.md-alert.md-alert-warning ul .md-list-item::marker,
+.md-alert.md-alert-warning ul ul .md-list-item::marker,
+.md-alert.md-alert-warning ul ul .md-list-item::marker,
+.md-alert.md-alert-warning ol .md-list-item:hover::marker {
+    color: var(--alert-warning-list-item-marker-color);
+}
+
+.md-alert.md-alert-important {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-important-border-color);
+    background-color: var(--alert-important-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-important:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid var(--alert-important-hover-border-color);
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-important p:hover {
+    background-color: var(--alert-important-hover-bg-color);
+}
+
+.md-alert.md-alert-important ::selection {
+    background-color: var(--alert-important-selection-bg-color);
+}
+
+.md-alert.md-alert-important strong,
+.md-alert.md-alert-important em,
+.md-alert.md-alert-important code,
+.md-alert.md-alert-important a {
+    color: var(--alert-important-text-color);
+}
+
+.md-alert.md-alert-important table thead,
+.md-alert.md-alert-important .md-table-fig .md-table thead {
+    background-color: var(--alert-important-thead-bg-color);
+    color: var(--alert-important-thead-text-color);
+}
+
+.md-alert.md-alert-important ul .md-list-item::marker,
+.md-alert.md-alert-important ul ul .md-list-item::marker,
+.md-alert.md-alert-important ul ul .md-list-item::marker,
+.md-alert.md-alert-important ol .md-list-item:hover::marker {
+    color: var(--alert-important-list-item-marker-color);
+}
+
+.md-alert.md-alert-note {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid var(--alert-note-border-color);
+    background-color: var(--alert-note-bg-color);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-note:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid var(--alert-note-hover-border-color);
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-note p:hover {
+    background-color: var(--alert-note-hover-bg-color);
+}  
+
+.md-alert.md-alert-note ::selection {
+    background-color: var(--alert-note-selection-bg-color);
+}
+
+.md-alert.md-alert-note strong,
+.md-alert.md-alert-note em,
+.md-alert.md-alert-note code,
+.md-alert.md-alert-note a {
+    color: var(--alert-note-text-color);
+}
+
+.md-alert.md-alert-note table thead,
+.md-alert.md-alert-note .md-table-fig .md-table thead {
+    background-color: var(--alert-note-thead-bg-color);
+    color: var(--alert-note-thead-text-color);
+}
+
+.md-alert.md-alert-note ul .md-list-item::marker,
+.md-alert.md-alert-note ul ul .md-list-item::marker,
+.md-alert.md-alert-note ul ul .md-list-item::marker,
+.md-alert.md-alert-note ol .md-list-item:hover::marker {
+    color: var(--alert-note-list-item-marker-color);
+}
+
+.md-alert p {
+    margin: 0.1rem 0;
+}
+
+blockquote code,
+.md-alert.md-alert-tip code,
+.md-alert.md-alert-caution code,
+.md-alert.md-alert-warning code,
+.md-alert.md-alert-important code,
+.md-alert.md-alert-note code {
+    background-color: var(--alert-code-bg-color);
+}
+
+.md-alert.md-alert-tip .md-fences::before,
+.md-alert.md-alert-caution .md-fences::before,
+.md-alert.md-alert-warning .md-fences::before,
+.md-alert.md-alert-important .md-fences::before,
+.md-alert.md-alert-note .md-fences::before {
+    background: var(--alert-code-3circle-1);
+    box-shadow: 20px 0 var(--alert-code-3circle-2), 40px 0 var(--alert-code-3circle-3);
+}
+
+blockquote td,
+.md-alert.md-alert-tip td,
+.md-alert.md-alert-caution td,
+.md-alert.md-alert-warning td,
+.md-alert.md-alert-important td,
+.md-alert.md-alert-note td {
+    background-color: var(--alert-td-bg-color);
+}
+
+.md-alert-text-container {
+    font-size: 20px;
 }
 
 
@@ -387,14 +662,22 @@ li.md-list-item {
 #write sup a::before {
   content: none;
 }
+
+
 /* 加粗 */
 #write strong {
   color: #1dd67a;
   font-weight: bold;
 }
 
+strong:hover {
+    font-size: calc(1.2rem + 0.05rem * var(--strong-hover-effect) * var(--use-dynamic-effect));
+    padding: calc(0px + 3px * var(--strong-hover-effect) * var(--use-dynamic-effect));
+}
+
 #write strong::after {
 }
+
 
 /* 斜体 */
 #write em {
@@ -421,6 +704,7 @@ li.md-list-item {
   border-top: 2px solid #68b7f8;
 }
 
+
 /* 图片*/
 #write img {
 	border-radius: 5px;
@@ -429,7 +713,13 @@ li.md-list-item {
 	object-fit: contain;
 	border-left: none !important;
 	border-right: none !important;
+	transition: transform 0.15s ease, border-radius 0.15s ease;
+}
 
+img:hover {
+	border-radius: 8px;
+    transform: scale(calc(1 + 0.01 * var(--img-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(10px - 10px * var(--img-hover-effect) * var(--use-dynamic-effect));
 }
 
 /* 图片描述文字 */
@@ -439,6 +729,7 @@ li.md-list-item {
   color: #F2F5F5;
 }
 
+
 /* 行内代码 */
 #write p code {
   color: #14dd53;
@@ -447,9 +738,16 @@ li.md-list-item {
   background: #7f7f7f;
   border-radius: 4px;
   padding: 0.1em 0.2em;
+	font-size: 1.25rem;
 }
+
 #write li code {
   color: #f7f7f7;
+}
+
+code:hover {
+    font-weight: calc(550 + 150 * var(--code-hover-effect) * var(--use-dynamic-effect));
+    padding: 3px 3px calc(1px + 2px * var(--code-hover-effect) * var(--use-dynamic-effect));
 }
 
 
@@ -459,6 +757,9 @@ li.md-list-item {
   display: table;
   text-align: left;
   color: #f7f7f7;
+	border-radius: 6px;
+	border-collapse: separate;
+	overflow: hidden;
 }
 #write tbody {
   border: 0;
