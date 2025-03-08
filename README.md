@@ -6,8 +6,8 @@ Super Polymerization- fusion theme is a theme appearance that integrates multipl
 
 ```
 .__dart 			Night Mode Dependency File
-|__ElementalEnvoy 	Daytime theme
-|__NightEnvoy 		Night theme
+|__tiangesec 	Daytime theme
+|__tiangesecdark 		Night theme
 ```
 
 ### ElementalEnvoy 
