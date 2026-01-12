@@ -658,15 +658,37 @@ blockquote:hover {
 #write strong {
   color: #1dd67a;
   font-weight: bold;
+
+  /* 关键：避免 inline 重排抖动 */
+  display: inline-block;
+
+  /* 默认字体大小 —— 完全不变 */
+  font-size: 1rem;
+  line-height: 1.4;
+
+  /* 为 hover 变大提前预留高度（不影响视觉） */
+  min-height: calc(1.25rem * 1.4);
+
+  /* 默认无 padding */
+  padding: 0;
+
+  transition:
+    font-size 0.18s ease,
+    padding 0.18s ease;
 }
 
-strong:hover {
-    font-size: calc(1.2rem + 0.05rem * var(--strong-hover-effect) * var(--use-dynamic-effect));
-    padding: calc(0px + 3px * var(--strong-hover-effect) * var(--use-dynamic-effect));
+/* hover 时才变大 */
+#write strong:hover {
+  font-size: 1.25rem;
+  padding: 3px;
 }
 
-#write strong::after {
+/* 键盘聚焦一致 */
+#write strong:focus-visible {
+  font-size: 1.25rem;
+  padding: 3px;
 }
+
 
 
 /* 斜体 */
@@ -752,36 +774,66 @@ code:hover {
 
 /*表格*/
 #write table {
+  width: 100%;
   display: table;
   text-align: left;
-  color: #f7f7f7;
-	border-radius: 6px;
-	border-collapse: separate;
-	overflow: hidden;
+  color: #e5e7eb;
+
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #2b2b2b;
 }
+
+/* 表体不额外加边框 */
 #write tbody {
-  border: 0;
+  border: none;
 }
+
+/* 行基础背景 */
 #write table tr {
-  border: 0;
-  border-top: 1px solid #4d4d4d;
-  background-color: white;
+  background-color: #2b2b2b;
 }
-#write table tr:nth-child(2n) {
-  background-color: #454649;
+
+/* 斑马纹（微弱对比） */
+#write table tr:nth-child(even) {
+  background-color: #313235;
 }
-#write table tr th,
-#write table tr td {
+
+/* 单元格 */
+#write table th,
+#write table td {
   font-size: 1rem;
-  background-color: #5F5F5F;
-  border: 1px solid #F2F5F5;
-  padding: 5px 10px;
+  padding: 8px 12px;
   text-align: left;
+
+  background-color: transparent;
+
+  /* 保留中间分割线（暗色柔和版） */
+  border-right: 1px solid #3a3a3a;
+  border-bottom: 1px solid #3a3a3a;
 }
-#write table tr th {
-  font-weight: bold;
-  background-color: #454649;
+
+/* 最后一列不画右边线 */
+#write table th:last-child,
+#write table td:last-child {
+  border-right: none;
 }
+
+/* 表头 */
+#write table th {
+  font-weight: 600;
+  background-color: #34363a;
+  color: #f1f1f1;
+}
+
+/* 最后一行不画底边 */
+#write table tr:last-child td {
+  border-bottom: none;
+}
+
 
 /* 脚注文字 */
 #write .footnote-word {

@@ -820,41 +820,57 @@ strong:hover {
 
 /*表格*/
 #write table {
-	border: 1px solid #ccc;
-  display: table;
-  text-align: left;
-	border-radius: 6px;
-	border-collapse: separate;
-	overflow: hidden;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-#write tbody {
-  border: 1px solid #ccc;
-}
-
+/* 行背景 */
 #write table tr {
-  border: 0;
-  border-top: 1px solid #ccc;
-  background-color: white;
+  background-color: #ffffff;
 }
 
-#write table tr:nth-child(2n) {
-  background-color: #F8F8F8;
+/* 斑马纹（非常浅） */
+#write table tr:nth-child(even) {
+  background-color: #f9fafb;
 }
 
-#write table tr th,
-#write table tr td {
+/* 单元格 */
+#write table th,
+#write table td {
   font-size: 1rem;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
+  padding: 8px 12px;
   text-align: left;
-	transition: all 0.3s ease;
+
+  /* 保留中间分割线 */
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+
+  transition: all 0.3s ease; /* 动画不动 */
 }
 
-#write table tr th {
-  font-weight: bold;
-  background-color: #f0f0f0;
+/* 最后一列不画右边线 */
+#write table th:last-child,
+#write table td:last-child {
+  border-right: none;
 }
+
+/* 表头 */
+#write table th {
+  font-weight: 600;
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+/* 最后一行不画底边 */
+#write table tr:last-child td {
+  border-bottom: none;
+}
+
 
 
 /* 脚注文字 */
