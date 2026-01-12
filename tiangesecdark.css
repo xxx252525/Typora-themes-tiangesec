@@ -118,41 +118,32 @@
 
 /* 一级标题 */
 #write h1 {
-  font-size: 2.0rem;
-  display: table;
-  font-weight: bold;
-  margin: 20px 0;
-  padding: 0px 10px;
-  border-radius: 8px;
-  background-color: #19F39B;
-  background: linear-gradient(to right, #29C1A8, #F743C8,#F94187);
-  background-size: 200% 100%;
-  background-position: 0% 0%;
-	transition: all ease-in-out 0.1s;
-	position: relative; /* 为了能够使用绝对定位来放置伪元素 */
-	overflow: hidden; /* 隐藏溢出的内容，使动画效果更加平滑 */
-	transition: transform 0.4s ease; /* 鼠标悬停时，H1 的缩放动画 */
-  transition: all ease-in-out 0.1s;
-  font-family: "MiSans", sans-serif;
+    font-size: 2rem;
+    display: table;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 0 10px;
+    border-radius: 8px;
+
+    background: linear-gradient(to right, #29C1A8, #F743C8, #F94187);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+
+    font-family: "MiSans", sans-serif;
+
+    transform: scale(1);
+    transform-origin: left center;
+
+    transition:
+        transform 0.22s ease-out,
+        background-position 0.5s ease-out;
+
+    will-change: transform;
 }
 
 #write h1:hover {
-  background-position: -100% -100%;
-  transition: all ease-in-out 0.1s;
-  transform: scale(calc(1 + 0.2 * var(--h1-hover-effect) * var(--use-dynamic-effect))); /* 鼠标悬停时，H1 本身的缩放动画 */
-}
-
-/* 一级标题内容 */
-#write h1 .content {
-}
-
-#write h1:hover:before {
-    transform: scaleX(calc(var(--h1-hover-effect) * var(--use-dynamic-effect))); /* 鼠标悬停时，伪元素的水平缩放动画 */
-}
-
-
-/* 一级标题修饰 请参考有实例的主题 */
-#write h1:after {
+    transform: scale(calc(1 + 0.06 * var(--h1-hover-effect) * var(--use-dynamic-effect)));
+    background-position: 100% 0%;
 }
 
 /* 二级标题 */
@@ -179,25 +170,44 @@
 
 /* 三级标题 */
 #write h3 {
-  font-size: 1.6rem;
-  font-family: "MiSans", sans-serif;
+    font-size: 1.6rem;
+    font-family: "MiSans", sans-serif;
+
+    transform: scale(1);
+    transform-origin: left center;
+
+    transition: transform 0.22s ease-out;
+    will-change: transform;
 }
 
-/* 三级标题内容 */
 #write h3 span {
-	border-radius: 5px;
-	background: #1DA4FF;
-	color: #F0F0F0;
-	padding: 3px 8px;
-	margin-right: 4px;
-	background: linear-gradient(to right, #3fb0cc, #3fcc98);
-  transition: all 0.2s ease-in-out; /* 增加过渡时间并调整为更加平滑的 ease-in-out */
+    border-radius: 5px;
+    padding: 3px 8px;
+    margin-right: 4px;
+
+    color: #F0F0F0;
+    background: linear-gradient(to right, #3fb0cc, #3fcc98);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+
+    transform: scale(1);
+
+    transition:
+        transform 0.22s ease-out,
+        box-shadow 0.22s ease-out,
+        background-position 0.4s ease-out;
+
+    will-change: transform;
 }
 
-/* 三级标题悬停效果 */
 #write h3:hover {
-  transform: scale(calc(1 + 0.01 * var(--h3-6-hover-effect) * var(--use-dynamic-effect)));
-  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 使用 cubic-bezier 曲线使放大效果更平滑 */
+    transform: scale(calc(1 + 0.04 * var(--h3-6-hover-effect) * var(--use-dynamic-effect)));
+}
+
+#write h3:hover span {
+    transform: scale(1.06);
+    background-position: 100% 0%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -375,47 +385,54 @@ li.md-list-item {
 
 /* 引用 */
 blockquote {
-	display: block;
-	font-size: 1.2em;
+    display: block;
+    font-size: 1.2em;
     padding: 0.5rem 1rem;
+
     border-left: 8px solid #63ab24;
     background-color: #036029;
     border-radius: 5px;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
-}
 
-blockquote p {
-    margin: 0.1rem 0;
+    transform: scale(1);
+    transform-origin: center center;
+
+    transition:
+        transform 0.22s ease-out,
+        box-shadow 0.22s ease-out;
+
+    will-change: transform;
 }
 
 blockquote:hover {
-    box-shadow: calc(0px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--blockquote-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(5px + 5px * var(--blockquote-hover-effect) * var(--use-dynamic-effect));
-}
-
-blockquote table thead,
-blockquote .md-table-fig .md-table thead {
-    background-color: #3b9457;
-    color: #3b3b3b4e;
-}
-
-blockquote td {
-    background-color: #fafafa;
+    transform: scale(calc(1 + 0.02 * var(--blockquote-hover-effect) * var(--use-dynamic-effect)));
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 
 /* 提示框 */
+.md-alert {
+    transform: scale(1);
+    transform-origin: center center;
+
+    transition:
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out;
+}
+
+/* Hover：仅缩放 + 阴影（黑夜减弱阴影） */
+.md-alert:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+/* =========================
+   提醒（Tip）
+========================= */
 .md-alert.md-alert-tip {
     padding: 0.5rem 1rem;
     border-left: 8px solid var(--alert-tip-border-color);
     background-color: var(--alert-tip-bg-color);
     border-radius: 5px;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
-}
-
-.md-alert.md-alert-tip:hover {
-    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
 }
 
 .md-alert.md-alert-tip table thead,
@@ -424,17 +441,14 @@ blockquote td {
     color: var(--alert-tip-thead-text-color);
 }
 
+/* =========================
+   建议 / 注意（Caution）
+========================= */
 .md-alert.md-alert-caution {
     padding: 0.5rem 1rem;
     border-left: 8px solid var(--alert-caution-border-color);
     background-color: var(--alert-caution-bg-color);
     border-radius: 5px;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
-}
-
-.md-alert.md-alert-caution:hover {
-    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
 }
 
 .md-alert.md-alert-caution p:hover {
@@ -464,22 +478,18 @@ blockquote td {
 
 .md-alert.md-alert-caution ul .md-list-item::marker,
 .md-alert.md-alert-caution ul ul .md-list-item::marker,
-.md-alert.md-alert-caution ul ul .md-list-item::marker,
 .md-alert.md-alert-caution ol .md-list-item:hover::marker {
     color: var(--alert-caution-list-item-marker-color);
 }
 
+/* =========================
+   警告（Warning）
+========================= */
 .md-alert.md-alert-warning {
     padding: 0.5rem 1rem;
     border-left: 8px solid var(--alert-warning-border-color);
     background-color: var(--alert-warning-bg-color);
     border-radius: 5px;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
-}
-
-.md-alert.md-alert-warning:hover {
-    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
 }
 
 .md-alert.md-alert-warning p:hover {
@@ -505,23 +515,18 @@ blockquote td {
 
 .md-alert.md-alert-warning ul .md-list-item::marker,
 .md-alert.md-alert-warning ul ul .md-list-item::marker,
-.md-alert.md-alert-warning ul ul .md-list-item::marker,
 .md-alert.md-alert-warning ol .md-list-item:hover::marker {
     color: var(--alert-warning-list-item-marker-color);
 }
 
+/* =========================
+   重要（Important）
+========================= */
 .md-alert.md-alert-important {
     padding: 0.5rem 1rem;
     border-left: 8px solid var(--alert-important-border-color);
     background-color: var(--alert-important-bg-color);
     border-radius: 5px;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
-}
-
-.md-alert.md-alert-important:hover {
-    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid var(--alert-important-hover-border-color);
-    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
 }
 
 .md-alert.md-alert-important p:hover {
@@ -547,28 +552,23 @@ blockquote td {
 
 .md-alert.md-alert-important ul .md-list-item::marker,
 .md-alert.md-alert-important ul ul .md-list-item::marker,
-.md-alert.md-alert-important ul ul .md-list-item::marker,
 .md-alert.md-alert-important ol .md-list-item:hover::marker {
     color: var(--alert-important-list-item-marker-color);
 }
 
+/* =========================
+   备注（Note）
+========================= */
 .md-alert.md-alert-note {
     padding: 0.5rem 1rem;
     border-left: 8px solid var(--alert-note-border-color);
     background-color: var(--alert-note-bg-color);
     border-radius: 5px;
-    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
-}
-
-.md-alert.md-alert-note:hover {
-    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid var(--alert-note-hover-border-color);
-    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(5px + 5px * var(--alert-hover-effect) * var(--use-dynamic-effect));
 }
 
 .md-alert.md-alert-note p:hover {
     background-color: var(--alert-note-hover-bg-color);
-}  
+}
 
 .md-alert.md-alert-note ::selection {
     background-color: var(--alert-note-selection-bg-color);
@@ -589,39 +589,29 @@ blockquote td {
 
 .md-alert.md-alert-note ul .md-list-item::marker,
 .md-alert.md-alert-note ul ul .md-list-item::marker,
-.md-alert.md-alert-note ul ul .md-list-item::marker,
 .md-alert.md-alert-note ol .md-list-item:hover::marker {
     color: var(--alert-note-list-item-marker-color);
 }
 
+/* =========================
+   通用细节
+========================= */
 .md-alert p {
     margin: 0.1rem 0;
 }
 
-blockquote code,
-.md-alert.md-alert-tip code,
-.md-alert.md-alert-caution code,
-.md-alert.md-alert-warning code,
-.md-alert.md-alert-important code,
-.md-alert.md-alert-note code {
+.md-alert code {
     background-color: var(--alert-code-bg-color);
 }
 
-.md-alert.md-alert-tip .md-fences::before,
-.md-alert.md-alert-caution .md-fences::before,
-.md-alert.md-alert-warning .md-fences::before,
-.md-alert.md-alert-important .md-fences::before,
-.md-alert.md-alert-note .md-fences::before {
+.md-alert .md-fences::before {
     background: var(--alert-code-3circle-1);
-    box-shadow: 20px 0 var(--alert-code-3circle-2), 40px 0 var(--alert-code-3circle-3);
+    box-shadow:
+        20px 0 var(--alert-code-3circle-2),
+        40px 0 var(--alert-code-3circle-3);
 }
 
-blockquote td,
-.md-alert.md-alert-tip td,
-.md-alert.md-alert-caution td,
-.md-alert.md-alert-warning td,
-.md-alert.md-alert-important td,
-.md-alert.md-alert-note td {
+.md-alert td {
     background-color: var(--alert-td-bg-color);
 }
 
@@ -707,19 +697,27 @@ strong:hover {
 
 /* 图片*/
 #write img {
-	border-radius: 5px;
-	display: block;
-	margin: 5px auto;
-	object-fit: contain;
-	border-left: none !important;
-	border-right: none !important;
-	transition: transform 0.15s ease, border-radius 0.15s ease;
+    display: block;
+    margin: 5px auto;
+    object-fit: contain;
+
+    border-radius: 5px;
+    border-left: none !important;
+    border-right: none !important;
+
+    transform: scale(1);
+    transform-origin: center center;
+
+    transition:
+        transform 0.22s ease-out,
+        box-shadow 0.22s ease-out;
+
+    will-change: transform;
 }
 
-img:hover {
-	border-radius: 8px;
-    transform: scale(calc(1 + 0.01 * var(--img-hover-effect) * var(--use-dynamic-effect)));
-    border-radius: calc(10px - 10px * var(--img-hover-effect) * var(--use-dynamic-effect));
+#write img:hover {
+    transform: scale(calc(1 + 0.03 * var(--img-hover-effect) * var(--use-dynamic-effect)));
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
 }
 
 /* 图片描述文字 */
