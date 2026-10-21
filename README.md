@@ -2,7 +2,7 @@
 
 Super Polymerization- fusion theme is a theme appearance that integrates multiple excellent styles and patterns, with very good visual effects. Enjoy the visual feast to your heart's content! It mainly consists of two themes: one is the Element Envoy for daytime use, and the other is the Dark Knight Envoy for nighttime use.
 
-demo:https://b23.tv/if8GyQT
+demo:[![Typora主题动画可以如此丝滑？](https://i1.hdslb.com/bfs/archive/37833dc37d48395d18a69647a07563665321c5a4.jpg@468w_292h_1c.webp)](https://b23.tv/if8GyQT)
 
 ## Directory Structure
 
